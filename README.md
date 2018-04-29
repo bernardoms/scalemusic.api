@@ -5,6 +5,7 @@ node with node express to build the api
 ##How to run
 <br />
 npm run start
+<br />
 ##Endpoints 
 <br />
 Return the notes of a scale from a given note and tonic
@@ -39,8 +40,11 @@ Return info about a given note:
 localhost:8080/frequency
 <br />
 Parameters:
+<br />
 note: the letter of a note. Ex: C
+<br />
 acc: the accidentals of the note (only sharps or flats). Ex: flat
+<br />
 oct: the octave number (as integer) Ex: 4
 <br />
 Example:
@@ -62,8 +66,11 @@ Returns:
 ```
 <br />
 Returns the chord of a given scale
+<br />
 localhost:8080/chords
+<br />
 Parameters:
+<br />
 scale: the name of a scale. Ex: major
 <br />
 Example:
@@ -94,7 +101,9 @@ Returns:
 ```
 <br />
 Return the intervals of a given scale
+<br />
 localhost:8080/intervals
+<br />
 Parameters:
 scale: the name of a scale. Ex: major
 <br />
@@ -118,7 +127,9 @@ Returns:
 ```
 <br />
 Returns scale name
+<br />
 localhost:8080/scalenames
+<br />
 Parameters:
 there is no parameters.
 <br />
@@ -225,6 +236,7 @@ Returns:
 ```
 <br />
 Return a json with a scale properties
+<br />
 localhost:8080/scaleprop
 <br />
 Parameters:
