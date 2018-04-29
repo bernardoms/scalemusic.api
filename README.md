@@ -14,8 +14,9 @@ tonic: a tonic. Ex: major
 
 Example:
 	localhost:8080/note?note=C&tonic=major
-```sh
+
 Returns:
+```sh
 {
  "notes": [
       "C",
@@ -39,8 +40,9 @@ oct: the octave number (as integer) Ex: 4
 
 Example:
 	localhost:8080/frequency?note=C&acc=flat&oct=4
-```sh
+
 Returns:
+```sh
 {
     "letter": "C",
     "acc": "b",
@@ -118,8 +120,9 @@ there is no parameters.
 Example:
 localhost:8080/scalenames
 
-```sh
+
 Returns:
+```sh
 {
     "scalenames": [
         "aeolian",
@@ -224,9 +227,9 @@ scale: the name of a scale. Ex: major
 
 Example:
 localhost:8080/scaleprop?scale=major
-```sh
-Returns:
 
+Returns:
+```sh
 {
     "intervals": [
         "1P",
