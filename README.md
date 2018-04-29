@@ -1,17 +1,22 @@
 ## scalemusicapi
 ##Technology
+<br />
 node with node express to build the api
 ##How to run
+<br />
 npm run start
 ##Endpoints 
-
+<br />
 Return the notes of a scale from a given note and tonic
+<br />
 localhost:8080/note
-
+<br />
 Parameters:
+<br />
 note: the letter of a note ex: C
+<br />
 tonic: a tonic. Ex: major
-
+<br />
 Example:
 	localhost:8080/note?note=C&tonic=major
 
@@ -29,15 +34,15 @@ Returns:
     ]
 }
 ```
-
+<br />
 Return info about a given note:
 localhost:8080/frequency
-
+<br />
 Parameters:
 note: the letter of a note. Ex: C
 acc: the accidentals of the note (only sharps or flats). Ex: flat
 oct: the octave number (as integer) Ex: 4
-
+<br />
 Example:
 	localhost:8080/frequency?note=C&acc=flat&oct=4
 
@@ -55,12 +60,12 @@ Returns:
     "freq": 246.94165062806206
 }
 ```
-
+<br />
 Returns the chord of a given scale
 localhost:8080/chords
 Parameters:
 scale: the name of a scale. Ex: major
-
+<br />
 Example:
 localhost:8080/chords?scale=major
 
@@ -87,12 +92,12 @@ Returns:
     ]
 }
 ```
-
+<br />
 Return the intervals of a given scale
 localhost:8080/intervals
 Parameters:
 scale: the name of a scale. Ex: major
-
+<br />
 
 Example:
 localhost:8080/chords?scale=major
@@ -111,12 +116,12 @@ Returns:
     ]
 }
 ```
-
+<br />
 Returns scale name
 localhost:8080/scalenames
 Parameters:
 there is no parameters.
-
+<br />
 Example:
 localhost:8080/scalenames
 
@@ -218,13 +223,13 @@ Returns:
     ]
 }
 ```
-
+<br />
 Return a json with a scale properties
 localhost:8080/scaleprop
-
+<br />
 Parameters:
 scale: the name of a scale. Ex: major
-
+<br />
 Example:
 localhost:8080/scaleprop?scale=major
 
