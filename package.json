@@ -1,0 +1,21 @@
+{
+  "name": "intmuapi",
+  "version": "1.0.0",
+  "description": "Interactive Music API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Bernardo Monteiro da Silva",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "note-parser": "^2.0.1",
+    "tonal-scale": "^1.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}
