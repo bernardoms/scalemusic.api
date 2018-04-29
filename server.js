@@ -1,11 +1,9 @@
-// server.js
-var express = require('express')
-var bodyParser = require('body-parser')
-var noteRoutes = require('./routes/route');
-app = express(),
-	port = process.env.PORT || 8080;
-//Set the app to list the route
-noteRoutes(app)
-app.listen(port);
+const express = require('express');
+const routes = require("./routes");
+const app = express();
 
-console.log('todo list RESTful API server started on: ' + port);
+routes(app);
+
+const port = process.env.PORT || 8080;
+app.listen(port);
+console.log(`todo list RESTful API server started on: ${port}`);
