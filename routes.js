@@ -42,4 +42,9 @@ module.exports = function (app) {
   app.get('/note/freq', (req, res) => {
     res.send(tonal.Note.freq(req.query.note + req.query.oct));
   });
+
+  //
+  app.get('/chord/notes', (req, res) => {
+    res.send(tonal.Chord.notes(req.query.chord));
+  });
 };
