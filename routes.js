@@ -19,7 +19,16 @@ module.exports = function (app) {
 
   // Returns scale names
   app.get('/scale/names', (req, res) => {
-    res.send(tonal.Scale.names());
+	let scaleArray = [];
+	if(req.query.isSimple){
+		scaleArray.push("Ionian (Maior)");
+		scaleArray.push("Dorian (Menor Natural)");
+		scaleArray.push("Phrygian (Menor Harmônica)");
+	}
+	else{
+		scaleArray = tonal.Scale.names()
+	}
+    res.send(scaleArray);
   });
 
   // Returns a json with properties of a scale
