@@ -12,7 +12,9 @@ module.exports = function (app) {
 
   // Returns scale names
   app.get('/scale/names', (req, res) => {
-    if (req.query.isSimple) {
+    if (req.query.advanced) {
+      res.send(tonal.Scale.names());
+    } else {
       res.send([
         "major",
         "aeolian",
@@ -22,8 +24,6 @@ module.exports = function (app) {
         "mixolydian",
         "locrian"
       ]);
-    } else {
-      res.send(tonal.Scale.names());
     }
   });
 
