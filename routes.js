@@ -17,11 +17,11 @@ module.exports = function (app) {
     } else {
       res.send([
         "major",
-        "aeolian",
         "dorian",
         "phrygian",
         "lydian",
         "mixolydian",
+        "aeolian",
         "locrian"
       ]);
     }
