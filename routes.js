@@ -7,6 +7,7 @@ module.exports = function (app) {
   app.get('/scale/intervals', (req, res) => res.send(tonal.Scale.intervals(req.query.scale)));
   app.get('/scale/props', (req, res) => res.send(tonal.Scale.props(req.query.scale)));
   app.get('/note/freq', (req, res) => res.send(tonal.Note.freq(req.query.note + req.query.oct)));
+  app.get('/note/chroma', (req, res) => res.send(tonal.Note.chroma(req.query.note)));
   app.get('/chord/notes', (req, res) => res.send(tonal.Chord.notes(req.query.chord)));
 
   // Returns scale names
