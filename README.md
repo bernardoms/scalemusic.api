@@ -6,9 +6,10 @@ npm run start
 `
 
 ## Endpoints
+
 Return the notes of a scale from a given note and tonic
 ```
-localhost:8080/notes?note=C&tonic=major
+localhost:8080/scale/notes?note=C&tonic=major
 ```
 
 ```json
@@ -18,7 +19,7 @@ localhost:8080/notes?note=C&tonic=major
 Return info about a given note:
 
 ```
-localhost:8080/frequency?note=C&acc=flat&oct=4
+localhost:8080/scale/frequency?note=C&acc=flat&oct=4
 ```
 
 ```json
@@ -28,7 +29,7 @@ localhost:8080/frequency?note=C&acc=flat&oct=4
 Returns chords of a given scale
 
 ```
-localhost:8080/chords?scale=major
+localhost:8080/scale/chords?scale=major
 ```
 
 ```json
@@ -38,7 +39,7 @@ localhost:8080/chords?scale=major
 Returns scale names
 
 ```
-localhost:8080/names
+localhost:8080/scale/names
 ```
 
 ```json
@@ -48,7 +49,7 @@ localhost:8080/names
 Return scale properties
 
 ```
-localhost:8080/props?scale=major
+localhost:8080/scale/props?scale=major
 ```
 
 ```json
