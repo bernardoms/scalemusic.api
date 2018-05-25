@@ -19,6 +19,6 @@
     "tonal-note": "^1.1.2"
   },
   "devDependencies": {
-    "nodemon": "^1.17.5-alpha.2"
+    "nodemon": "^1.17.5"
   }
 }
