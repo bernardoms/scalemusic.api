@@ -6,8 +6,6 @@ npm run start
 `
 or
 `
-npm run start
-`
  sudo docker build -t bernardoms/scalemusicapi
  sudo docker run -p 8080:8080 -d bernardoms/scalemusicapi
 `
