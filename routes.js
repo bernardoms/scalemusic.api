@@ -2,6 +2,7 @@ const tonal = require("tonal");
 const noteParser = require('note-parser');
 const tonalKey = require('tonal-key');
 const tonalNote = require('tonal-note');
+const simpleScale = [ "major","dorian","phrygian","lydian","mixolydian","aeolian","locrian"]
 
 module.exports = function (app) {
   app.get('/scale/chords', (req, res) => res.send(tonal.Scale.chords(req.query.scale)));
@@ -17,12 +18,7 @@ module.exports = function (app) {
       req.query.note,
       req.query.tonic
     ).map((note) => {
-      if (note.includes("#")) {
-        return tonalNote.enharmonic(note);
-      }
-      return note;
-    }).map((note) => {
-      if (note.includes("b")) {
+      if (note.includes("#") || note.includes("b")) {
         return tonalNote.enharmonic(note);
       }
       return note;
@@ -34,15 +30,7 @@ module.exports = function (app) {
     if (req.query.advanced) {
       res.send(tonal.Scale.names());
     } else {
-      res.send([
-        "major",
-        "dorian",
-        "phrygian",
-        "lydian",
-        "mixolydian",
-        "aeolian",
-        "locrian"
-      ]);
+      res.send(simpleScale);
     }
   });
 
