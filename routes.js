@@ -18,7 +18,12 @@ module.exports = function (app) {
       req.query.note,
       req.query.tonic
     ).map((note) => {
-      if (note.includes("#") || note.includes("b")) {
+      if (note.includes("#")) {
+        return tonalNote.enharmonic(note);
+      }
+      return note;
+    }).map((note) => {
+      if (note.includes("b")) {
         return tonalNote.enharmonic(note);
       }
       return note;
