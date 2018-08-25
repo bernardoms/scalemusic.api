@@ -2,22 +2,26 @@ const {Note, Scale} = require("tonal");
 const tonalNote = require('tonal-note');
 
 module.exports = function (app) {
-  app.get('/note/freq', (req, res) => res.send(Note.freq(req.query.note + req.query.oct)));
+  app.get('/note/freq', (req, res) => {
+    const {note, oct} = req.query;
+    res.send(Note.freq(note + oct));
+  });
 
   app.get('/scale/notes', (req, res) => {
+    const {note, tonic} = req.query;
     res.send(Scale.notes(
-      req.query.note,
-      req.query.tonic
-    ).map((note) => {
-      if (note.includes("#")) {
-        return tonalNote.enharmonic(note);
+      note,
+      tonic
+    ).map((value) => {
+      if (value.includes("#")) {
+        return tonalNote.enharmonic(value);
       }
-      return note;
-    }).map((note) => {
-      if (note.includes("b")) {
-        return tonalNote.enharmonic(note);
+      return value;
+    }).map((value) => {
+      if (value.includes("b")) {
+        return tonalNote.enharmonic(value);
       }
-      return note;
+      return value;
     }));
   });
 
