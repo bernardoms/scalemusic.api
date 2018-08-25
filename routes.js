@@ -1,11 +1,11 @@
-const tonal = require("tonal");
+const {Note, Scale} = require("tonal");
 const tonalNote = require('tonal-note');
 
 module.exports = function (app) {
-  app.get('/note/freq', (req, res) => res.send(tonal.Note.freq(req.query.note + req.query.oct)));
+  app.get('/note/freq', (req, res) => res.send(Note.freq(req.query.note + req.query.oct)));
 
   app.get('/scale/notes', (req, res) => {
-    res.send(tonal.Scale.notes(
+    res.send(Scale.notes(
       req.query.note,
       req.query.tonic
     ).map((note) => {
