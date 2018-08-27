@@ -32,12 +32,12 @@ module.exports = function (app) {
 
   app.get('/scale/roman', (req, res) => {
     const {tonic} = req.query;
-    if(tonic === "major") return res.send("I", "ii", "iii", "IV", "V", "vi", "viiº");
-    if(tonic === "dorian") return res.send("i", "ii", "♭III", "IV", "v", "viº", "♭VII");
-    if(tonic === "phrygian") return res.send("i", "♭II", "♭III", "iv", "vº", "♭VI", "♭vii");
-    if(tonic === "lydian") return res.send("I", "II", "iii", "♯ivº", "V", "vi", "vii");
-    if(tonic === "mixolydian") return res.send("I", "ii", "iiiº", "IV", "v", "vi", "♭VII");
-    if(tonic === "aeolian") return res.send("i", "iiº", "♭III", "iv", "v", "♭VI", "♭VII");
-    if(tonic === "locrian") return res.send("iº", "♭II", "♭iii", "iv", "♭V", "♭VI", "♭vii");
+    if(tonic === "major") return res.send(["I", "ii", "iii", "IV", "V", "vi", "viiº"]);
+    if(tonic === "dorian") return res.send(["i", "ii", "♭III", "IV", "v", "viº", "♭VII"]);
+    if(tonic === "phrygian") return res.send(["i", "♭II", "♭III", "iv", "vº", "♭VI", "♭vii"]);
+    if(tonic === "lydian") return res.send(["I", "II", "iii", "♯ivº", "V", "vi", "vii"]);
+    if(tonic === "mixolydian") return res.send(["I", "ii", "iiiº", "IV", "v", "vi", "♭VII"]);
+    if(tonic === "aeolian") return res.send(["i", "iiº", "♭III", "iv", "v", "♭VI", "♭VII"]);
+    if(tonic === "locrian") return res.send(["iº", "♭II", "♭iii", "iv", "♭V", "♭VI", "♭vii"]);
   });
 };
