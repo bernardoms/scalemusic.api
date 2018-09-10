@@ -1,5 +1,5 @@
 const {Note, Scale} = require("tonal");
-const tonalNote = require('tonal-note');
+const {enharmonic} = require('tonal-note');
 
 module.exports = function (app) {
   app.get('/note/freq', (req, res) => {
@@ -19,7 +19,7 @@ module.exports = function (app) {
       return value;
     }).map((value) => {
       if (value.includes("b")) {
-        return tonalNote.enharmonic(value);
+        return enharmonic(value);
       }
       return value;
     }));
