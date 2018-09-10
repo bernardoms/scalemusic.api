@@ -4,25 +4,26 @@ const {enharmonic} = require('tonal-note');
 module.exports = function (app) {
   app.get('/note/freq', (req, res) => {
     const {note, oct} = req.query;
-    res.send(Note.freq(note + oct));
+    const freq = Note.freq(note + oct);
+    res.send(freq);
   });
 
   app.get('/scale/notes', (req, res) => {
     const {note, tonic} = req.query;
-    res.send(Scale.notes(
-      note,
-      tonic
-    ).map((value) => {
+    const notes = Scale.notes(note, tonic);
+    const notesInBemol = notes.map((value) => {
       if (value.includes("#")) {
-        return tonalNote.enharmonic(value);
+        return enharmonic(value);
       }
       return value;
-    }).map((value) => {
+    });
+    const notesInSharp = notesInBemol.map((value) => {
       if (value.includes("b")) {
         return enharmonic(value);
       }
       return value;
-    }));
+    });
+    res.send(notesInSharp);
   });
 
   // Returns scale names
