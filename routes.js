@@ -26,8 +26,7 @@ module.exports = function (app) {
     res.send(notesInSharp);
   });
 
-  // Returns scale names
-  app.get('/scale/names', (req, res) => {
+  app.get('/scales', (req, res) => {
     res.send(["major", "dorian", "phrygian", "lydian", "mixolydian", "aeolian", "locrian"]);
   });
 
