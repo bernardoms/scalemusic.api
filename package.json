@@ -15,8 +15,8 @@
     "express": "^5.0.0-alpha.6",
     "note-parser": "^2.0.1",
     "tonal": "^2.0.0",
-    "tonal-key": "^2.0.0",
-    "tonal-note": "^2.0.0"
+    "tonal-key": "^1.1.2",
+    "tonal-note": "^1.1.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.4"
