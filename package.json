@@ -1,6 +1,9 @@
 {
   "name": "intmuapi",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.9.4"
+  },
   "description": "Interactive Music API",
   "main": "server.js",
   "scripts": {
