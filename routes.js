@@ -9,7 +9,8 @@ module.exports = function (app) {
   });
 
   app.get('/scale/notes', (req, res) => {
-    const {note, tonic} = req.query;
+    const note = req.query.note;
+    const tonic = translateScale(req.query.tonic)
     const notes = Scale.notes(note, tonic);
     const notesInBemol = notes.map((value) => {
       if (value.includes("#")) {
@@ -27,6 +28,24 @@ module.exports = function (app) {
   });
 
   app.get('/scales', (req, res) => {
-    res.send(["major", "minor", "melodic minor", "harmonic minor"]);
+    res.send(["Maior", "Menor", "Menor Melódica", "Menor Harmônica"]);
   });
+
+  function translateScale(tonic){
+      if(tonic == "Maior"){
+        return "major"
+      }
+      else if(tonic == "Menor"){
+        return "minor"
+      }
+      else if(tonic == "Menor Melódica"){
+        return "melodic minor"
+      }
+      else if(tonic == "Menor Harmônica"){
+        return "harmonic minor"
+      }
+      else{
+        return tonic
+      }
+    }
 };
