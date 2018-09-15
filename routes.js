@@ -28,14 +28,14 @@ module.exports = function (app) {
   });
 
   app.get('/scales', (req, res) => {
-    res.send(["Maior", "Menor", "Menor Melódica", "Menor Harmônica"]);
+    res.send(["Maior", "Menor Natural", "Menor Melódica", "Menor Harmônica"]);
   });
 
   function translateScale(tonic){
       if(tonic == "Maior"){
         return "major"
       }
-      else if(tonic == "Menor"){
+      else if(tonic == "Menor Natural"){
         return "minor"
       }
       else if(tonic == "Menor Melódica"){
