@@ -27,6 +27,6 @@ module.exports = function (app) {
   });
 
   app.get('/scales', (req, res) => {
-    res.send(["major", "minor", "melodic minor", "aeolian"]);
+    res.send(["major", "minor", "melodic minor", "harmonic minor"]);
   });
 };
