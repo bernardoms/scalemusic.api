@@ -9,9 +9,10 @@ module.exports = function (app) {
   });
 
   app.get('/scale/notes', (req, res) => {
-    const note = req.query.note;
+    const note = req.query.note.split("/")[0];
     const tonic = translateScale(req.query.tonic)
     const notes = Scale.notes(note, tonic);
+    
     const notesInBemol = notes.map((value) => {
       if (value.includes("#")) {
         return enharmonic(value);
@@ -20,10 +21,11 @@ module.exports = function (app) {
     });
     const notesInSharp = notesInBemol.map((value) => {
       if (value.includes("b")) {
-        return enharmonic(value);
+        return enharmonic(value).concat("/" + value)
       }
       return value;
     });
+
     res.send(notesInSharp);
   });
 
