@@ -4,7 +4,7 @@ const {enharmonic} = require('tonal-note');
 module.exports = function (app) {
   app.get('/note/freq', (req, res) => {
     const {note, oct} = req.query;
-    const freq = Note.freq(note + oct);
+    const freq = Note.freq(note.split("/")[0] + oct);
     res.send(freq);
   });
 
