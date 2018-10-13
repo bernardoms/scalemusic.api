@@ -17,11 +17,9 @@
     "cors": "^2.8.4",
     "express": "^5.0.0-alpha.6",
     "note-parser": "^2.0.1",
-    "soundfont-player": "^0.10.7",
     "tonal": "^2.0.0",
     "tonal-key": "^2.0.0",
-    "tonal-note": "^2.0.0",
-    "web-audio-api": "^0.2.2"
+    "tonal-note": "^2.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.4"
