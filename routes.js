@@ -2,6 +2,8 @@ const {Note, Scale} = require("tonal");
 const {enharmonic} = require('tonal-note');
 const fs = require('fs');
 const getStat = require('util').promisify(fs.stat)
+var Soundfont = require('soundfont-player')
+var ac = require('web-audio-api').AudioContext
 
 module.exports = function (app) {
   app.get('/note/freq', (req, res) => {
@@ -9,6 +11,12 @@ module.exports = function (app) {
     const freq = Note.freq(note.split("/")[0] + oct);
     res.send(freq);
   });
+
+app.get('/note/test', (req, res)=>{
+  Soundfont.instrument(ac, 'marimba', { soundfont: 'MusyngKite' }).then(function (marimba) {
+    marimba.play('C4')
+  })
+})
 
   app.get('/scale/notes', (req, res) => {
     const note = req.query.note.split("/")[0];
