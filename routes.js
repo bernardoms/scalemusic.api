@@ -36,12 +36,14 @@ module.exports = function (app) {
   });
 
   app.get('/sounds', async(req, res) =>{
-      const {note, oct} = req.query;
-      console.log(note);
-      const filePath = './sounds/' +note.split("/")[0]+oct+'.wav';
+      let {note, oct} = req.query;
+      if(note.includes("b")){
+        note = note.split("/")[1]
+      }
+      const filePath = './sounds/' + note + oct + '.mp3';
       const stat = await getStat(filePath);  
       res.writeHead(200, {
-        'Content-Type': 'audio/wav',
+        'Content-Type': 'audio/mp3',
         'Content-Length': stat.size
     });
     const stream = fs.createReadStream(filePath);
