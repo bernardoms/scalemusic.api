@@ -2,6 +2,7 @@ const {Note, Scale} = require("tonal");
 const {enharmonic} = require('tonal-note');
 const fs = require('fs');
 const getStat = require('util').promisify(fs.stat)
+const resolve = require('path').resolve
 
 module.exports = function (app) {
   app.get('/note/freq', (req, res) => {
@@ -9,6 +10,12 @@ module.exports = function (app) {
     const freq = Note.freq(note.split("/")[0] + oct);
     res.send(freq);
   });
+
+  app.get("/instrument/:instrument_name", (req,res) =>{
+    var file = req.params.instrument_name;
+    const filePath = "./soundfont/" + file; 
+    res.sendFile(resolve(filePath));
+  })
 
   app.get('/scale/notes', (req, res) => {
     const note = req.query.note.split("/")[0];
