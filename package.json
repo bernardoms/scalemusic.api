@@ -17,9 +17,9 @@
     "cors": "^2.8.4",
     "express": "^5.0.0-alpha.7",
     "note-parser": "^2.0.1",
-    "tonal": "^2.0.0",
-    "tonal-key": "^2.0.0",
-    "tonal-note": "^2.0.0"
+    "tonal": "^2.1.1",
+    "tonal-key": "^2.1.1",
+    "tonal-note": "^2.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.5"
