@@ -37,7 +37,7 @@ localhost:8080/note/freq?note=C&oct=2
 ```
 
 ```json
-{"65.40639132514966"]}
+{"65.40639132514966"}
 ```
 
 Return the sound of a given note
@@ -47,5 +47,5 @@ localhost:8080/sounds?note=C&oct=2
 ```
 
 ```
-return a .wav sound file
+returns a .wav sound file
 ```
