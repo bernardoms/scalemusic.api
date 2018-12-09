@@ -2,7 +2,7 @@ const {Note, Scale} = require("tonal");
 const {enharmonic} = require('tonal-note');
 const fs = require('fs');
 const getStat = require('util').promisify(fs.stat)
-const resolve = require('path').resolve
+const { resolve } = require('path')
 
 module.exports = function (app) {
   app.get('/note/freq', (req, res) => {
@@ -11,17 +11,18 @@ module.exports = function (app) {
     res.send(freq);
   });
 
-  app.get("/instrument/:instrument_name", (req,res) =>{
-    var file = req.params.instrument_name;
-    const filePath = "./soundfont/" + file; 
+  app.get("/instrument/:instrument_name", (req, res) => {
+    const { instrument_name } = req.params;
+    const filePath = "./soundfont/" + instrument_name;
     res.sendFile(resolve(filePath));
   })
 
   app.get('/scale/notes', (req, res) => {
-    const note = req.query.note.split("/")[0];
-    const tonic = translateScale(req.query.tonic)
-    const notes = Scale.notes(note, tonic);
-    
+    const { note, tonic } = req.query;
+    const firstNote = note.split("/")[0];
+    const translatedScale = translateScale(tonic)
+    const notes = Scale.notes(firstNote, translatedScale);
+
     const notesInBemol = notes.map((value) => {
       if (value.includes("#")) {
         return enharmonic(value);
